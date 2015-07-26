@@ -46,6 +46,10 @@ module InfoBlox
         @user = @config['credentials']['username']
         @password= @config['credentials']['password']
         @servername = @config['credentials']['servername']
+        @wapi_version = @config['credentials']['wapi_version']
+        if @wapi_version.nil?
+	   @wapi_version = "v1.4"
+        end
         @connection ="#{@user}:#{@password}@#{@servername}" 
       else
         # We will get each option from the options hash
@@ -57,6 +61,10 @@ module InfoBlox
         @user = options[:username]
         @password =  options[:password]
         @servername = options[:servername]
+        @wapi_version = @config['credentials']['wapi_version']
+        if @wapi_version.nil?
+	   @wapi_version = "v1.4"
+        end
       end
       # get the InfoBlox Connection Instance - Singleton
       @client = InfoBlox::Connection.instance
@@ -137,7 +145,7 @@ module InfoBlox
     def fetchHost(options)
    
        # Set the location ... 
-       @location = "/wapi/v1.4/record:host?"
+       @location = "/wapi/"+@wapi_version+"/record:host?"
   
        # We can search for any of these in InfoBlox
        #
@@ -186,7 +194,7 @@ module InfoBlox
     ##################################
     def getAllNetworks
       # Set the location ... 
-      @location = "/wapi/v1.4/network"
+      @location = "/wapi/"+@wapi_version+"/network"
   
       begin
         response = @client.get(@location, nil)
@@ -204,7 +212,7 @@ module InfoBlox
 	  raise "Need a _ref object to delete"
       end
       # Set the location ... 
-      @location = "/wapi/v1.4/" + item
+      @location = "/wapi/" + @wapi_version + "/" + item
   
       begin
         response = @client.delete(@location, nil)
@@ -227,7 +235,7 @@ module InfoBlox
     ##################################
     def getIP(hostname, ipaddress)
       # Set the location ... 
-      @location = "/wapi/v1.4/record:host?" 
+      @location = "/wapi/"+@wapi_version+"/record:host?"
   
       json_data = {}
       json_data[:name] = hostname unless hostname.nil?
@@ -259,7 +267,7 @@ module InfoBlox
     def fetchNetworkRef(cdir)
       # Set the location ... 
       #@location = "/wapi/v1.4/#{cdir}"
-      @location = "/wapi/v1.4/network?"
+      @location = "/wapi/"+@wapi_version+"/network?"
   
       json_data = {}
       json_data[:network] = "#{cdir}"
@@ -297,7 +305,7 @@ module InfoBlox
     def nextIP(network)
       # Set the location ... 
       #@location = "/wapi/v1.4/network"
-      @location = "/wapi/v1.4/" + "#{network}" + "?_function=next_available_ip&num=1"
+      @location = "/wapi/"+@wapi_version+"/" + "#{network}" + "?_function=next_available_ip&num=1"
       puts "nextIP: #{@location}"
   
       #json_data = {}
