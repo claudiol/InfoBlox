@@ -15,6 +15,21 @@ begin
   puts "------- Add Host Test -------"
   puts ""
 
+  puts ""
+  puts "------- Add IP to Host Test -------"
+  puts "uooie = infoblox.addIpToHost(\"unknown-host\",\"192.168.0.3\")"
+  puts uooie = infoblox.addIpToHost("unknown-host","192.168.0.3")
+  puts "Returned Value: " + uooie.inspect
+  puts "------- Add IP to Host Test -------"
+  puts ""
+
+  puts ""
+  puts "------- Delete IP from Host Test -------"
+  puts "uooie = infoblox.deleteIpFromHost(\"unknown-host\",\"192.168.0.3\")"
+  puts uooie = infoblox.deleteIpFromHost("unknown-host","192.168.0.3")
+  puts "Returned Value: " + uooie.inspect
+  puts "------- Delete IP from Host Test -------"
+  puts ""
 
   puts "------- Search Test -------"
   puts "uooie = infoblox.getIP(\"fedora-laptop\",\"192.168.0.92\")"

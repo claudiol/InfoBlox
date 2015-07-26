@@ -199,7 +199,7 @@ module InfoBlox
     end 
   
     ##################################
-    # @!methot  getAllNetworks 
+    # @!method  getAllNetworks 
     # @version 0.2
     # @param None
     # @return [Array] Array of Hashes with the information of the networks.
@@ -217,14 +217,20 @@ module InfoBlox
     end
   
     ##################################
-    # Delete Host                    #
+    # @!method  deleteHost 
+    #   Deletes a host entry from InfoBlox
+    # @version 0.2
+    # @param host_ref - Host Reference for Host Record fetched from InfoBlox  
+    # Example reference record: record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:unknown-host/%20
+    # @return [Array] Array of Hashes with the information of the networks.
     ##################################
-    def deleteHost(item)
-      if item.nil?
+    ##################################
+    def deleteHost(host_ref)
+      if host_ref.nil?
 	  raise "Need a _ref object to delete"
       end
       # Set the location ... 
-      @location = "/wapi/" + @wapi_version + "/" + item
+      @location = "/wapi/" + @wapi_version + "/" + host_ref
   
       begin
         response = @client.delete(@location, nil)
@@ -243,12 +249,156 @@ module InfoBlox
     end
   
     ##################################
-    # Get IP Address                 #
+    # @!method  deleteIpFromHost
+    #   Deletes an IP address record to an existing Host Record in InfoBlox
+    # @version 0.2
+    # @param hostname - Name of the existing host in InfoBlox
+    # @param ipaddress - Valid IP address
+    # @return [Boolean] Call will return true if successful. Otherwise an exception will be raised.
+    ##################################
+    def deleteIpFromHost(hostname, ipaddress)
+      # Set the location ... 
+      @location = "/wapi/"+@wapi_version+"/record:host?"
+     
+      # Use 'ipv4addrs+' or 'ipv4addrs-'
+      #
+      # PUT /record:host/ZG5zLmhvc3QkLl9kZWZhdWx0Lm9yZy5naC53YXBp
+      # Content-Type: application/json
+      #
+      # { 
+      #    "ipv4addrs-":[
+      #       { "ipv4addr":"2.2.2.22" }
+      #       { "ipv4addr":"4.4.4.24" }
+      #     ]
+      # }
+  
+      if hostname.nil? || ipaddress.nil?
+         raise "You must pass in a hostname and an IP address"
+      end
+
+      if validate_ipaddr(ipaddress) == false
+         raise "IP Address value: #{ipaddress} is not valid!"
+      end
+ 
+      # First we need to fetch the record ...
+
+      puts "------- Fetch Host -------"
+      options = {}
+      host_ref = {}
+      options[:name] = "#{hostname}"
+      uooie = self.fetchHost(options)
+      puts "Returned Value: " + uooie.inspect
+      ref = {}
+      host_ref = uooie[0] # fetchHost will return an array of 1.  Pick up the first element.
+      puts "Ref = " + host_ref.inspect 
+      puts "------- Fetch Host -------"
+
+      @location = "/wapi/"+@wapi_version+"/" + host_ref["_ref"]
+      # Now we can create the location to the InfoBlox API
+      json_data = {}
+      ipv4addr_data = {}
+      ipv4addr_array = []
+
+      json_data[:name] = hostname 
+      ipv4addr_data[:ipv4addr] = ipaddress 
+      ipv4addr_array[0] = ipv4addr_data
+      json_data['ipv4addrs-'] = ipv4addr_array
+      request = JSON.generate(json_data)
+  
+      puts @location
+      begin
+        response = @client.put(@location, request)
+        return true
+      rescue => ex
+        raise ex
+      end
+
+    end
+
+    ##################################
+    # @!method  addIpToHost
+    #   Adds an IP address record to an existing Host Record in InfoBlox
+    # @version 0.2
+    # @param hostname - Name of the existing host in InfoBlox
+    # @param ipaddress - Valid IP address
+    # @return [Boolean] Call will return true if successful. Otherwise an exception will be raised.
+    ##################################
+    def addIpToHost(hostname, ipaddress)
+      # Set the location ... 
+      @location = "/wapi/"+@wapi_version+"/record:host?"
+     
+      # Use 'ipv4addrs+' or 'ipv4addrs-'
+      #
+      # PUT /record:host/ZG5zLmhvc3QkLl9kZWZhdWx0Lm9yZy5naC53YXBp
+      # Content-Type: application/json
+      #
+      # { 
+      #    "ipv4addrs+":[
+      #       { "ipv4addr":"2.2.2.22" }
+      #       { "ipv4addr":"4.4.4.24" }
+      #     ]
+      # }
+  
+      if hostname.nil? || ipaddress.nil?
+         raise "You must pass in a hostname and an IP address"
+      end
+
+      if validate_ipaddr(ipaddress) == false
+         raise "IP Address value: #{ipaddress} is not valid!"
+      end
+ 
+      # First we need to fetch the record ...
+
+      puts "------- Fetch Host -------"
+      options = {}
+      host_ref = {}
+      options[:name] = "#{hostname}"
+      uooie = self.fetchHost(options)
+      puts "Returned Value: " + uooie.inspect
+      ref = {}
+      host_ref = uooie[0] # fetchHost will return an array of 1.  Pick up the first element.
+      puts "Ref = " + host_ref.inspect 
+      puts "------- Fetch Host -------"
+
+      @location = "/wapi/"+@wapi_version+"/" + host_ref["_ref"]
+      # Now we can create the location to the InfoBlox API
+      json_data = {}
+      ipv4addr_data = {}
+      ipv4addr_array = []
+
+      json_data[:name] = hostname 
+      ipv4addr_data[:ipv4addr] = ipaddress 
+      ipv4addr_array[0] = ipv4addr_data
+      json_data['ipv4addrs+'] = ipv4addr_array
+      request = JSON.generate(json_data)
+  
+      puts @location
+      begin
+        response = @client.put(@location, request)
+        return true
+      rescue => ex
+        raise ex
+      end
+
+    end
+
+    ##################################
+    # @!method  getIP
+    #  Method used to see if host exists in InfoBlox
+    # @version 0.2
+    # @param hostname - Name of the host
+    # @param ipaddress - IP Address associated with the host. Must be valid IP address
+    # @return [Boolean] Returns true if successful otherwise an exception will be thrown
     ##################################
     def getIP(hostname, ipaddress)
       # Set the location ... 
       @location = "/wapi/"+@wapi_version+"/record:host?"
-  
+
+
+      if validate_ipaddr(ipaddress) == false
+         raise "IP Address value: #{ipaddress} is not valid!"
+      end
+
       json_data = {}
       json_data[:name] = hostname unless hostname.nil?
       json_data[:ipv4addr] = ipaddress unless ipaddress.nil?
@@ -274,11 +424,15 @@ module InfoBlox
     end
   
     ##################################
-    # Fetch Network Ref              #
+    # @!method fetchNetworkRef 
+    #   Fetch Network Reference 
+    # @version 0.2
+    # @param cdir - IP Network entry. e.g 192.168.0.0/24  
+    # @return [network_ref] Returned InfoBlox reference to the network entry
+    ##################################
     ##################################
     def fetchNetworkRef(cdir)
       # Set the location ... 
-      #@location = "/wapi/v1.4/#{cdir}"
       @location = "/wapi/"+@wapi_version+"/network?"
   
       json_data = {}
@@ -312,7 +466,11 @@ module InfoBlox
     end
   
     ##################################
-    # Next Available IP Address      #
+    # @!method  nextIP
+    #   Retrieve the next Available IP Address for a network
+    # @version 0.2
+    # @param network - InfoBlox network reference 
+    # @return [String] Returns the next available IP address for he network passed
     ##################################
     def nextIP(network)
       # Set the location ... 

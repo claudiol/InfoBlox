@@ -141,7 +141,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#deleteHost-instance_method" title="#deleteHost (instance method)">- (Object) <strong>deleteHost</strong>(item) </a>
+      <a href="#addIpToHost-instance_method" title="#addIpToHost (instance method)">- (Boolean) <strong>addIpToHost</strong> </a>
     
 
     
@@ -156,7 +156,56 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Delete Host                    #.</p>
+<p>Call will return true if successful.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deleteHost-instance_method" title="#deleteHost (instance method)">- (Array) <strong>deleteHost</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Example reference record:
+record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:unknown-host/%20.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deleteIpFromHost-instance_method" title="#deleteIpFromHost (instance method)">- (Boolean) <strong>deleteIpFromHost</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Call will return true if successful.</p>
 </div></span>
   
 </li>
@@ -189,7 +238,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fetchNetworkRef-instance_method" title="#fetchNetworkRef (instance method)">- (Object) <strong>fetchNetworkRef</strong>(cdir) </a>
+      <a href="#fetchNetworkRef-instance_method" title="#fetchNetworkRef (instance method)">- (network_ref) <strong>fetchNetworkRef</strong> </a>
     
 
     
@@ -204,7 +253,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Fetch Network Ref              #.</p>
+<p>Returned InfoBlox reference to the network entry.</p>
 </div></span>
   
 </li>
@@ -237,7 +286,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#getIP-instance_method" title="#getIP (instance method)">- (Object) <strong>getIP</strong>(hostname, ipaddress) </a>
+      <a href="#getIP-instance_method" title="#getIP (instance method)">- (Boolean) <strong>getIP</strong> </a>
     
 
     
@@ -252,7 +301,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get IP Address                 #.</p>
+<p>Returns true if successful otherwise an exception will be thrown.</p>
 </div></span>
   
 </li>
@@ -311,7 +360,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#nextIP-instance_method" title="#nextIP (instance method)">- (Object) <strong>nextIP</strong>(network) </a>
+      <a href="#nextIP-instance_method" title="#nextIP (instance method)">- (String) <strong>nextIP</strong> </a>
     
 
     
@@ -326,7 +375,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Next Available IP Address      #.</p>
+<p>Returns the next available IP address for he network passed.</p>
 </div></span>
   
 </li>
@@ -712,9 +761,9 @@ the following options:
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="deleteHost-instance_method">
+  <h3 class="signature " id="addIpToHost-instance_method">
   
-    - (<tt>Object</tt>) <strong>deleteHost</strong>(item) 
+    - (<tt>Boolean</tt>) <strong>addIpToHost</strong> 
   
 
   
@@ -723,13 +772,86 @@ the following options:
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Delete Host                    #</p>
+<p>Returns Call will return true if successful. Otherwise an exception will be
+raised.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Name of the existing host in InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ipaddress</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Valid IP address</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Call will return true if successful. Otherwise an exception will be raised.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -737,12 +859,213 @@ the following options:
       <pre class="lines">
 
 
-222
-223
-224
-225
-226
-227
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 326</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_addIpToHost'>addIpToHost</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='comma'>,</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span>
+  <span class='comment'># Set the location ... 
+</span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/record:host?</span><span class='tstring_end'>&quot;</span></span>
+ 
+  <span class='comment'># Use &#39;ipv4addrs+&#39; or &#39;ipv4addrs-&#39;
+</span>  <span class='comment'>#
+</span>  <span class='comment'># PUT /record:host/ZG5zLmhvc3QkLl9kZWZhdWx0Lm9yZy5naC53YXBp
+</span>  <span class='comment'># Content-Type: application/json
+</span>  <span class='comment'>#
+</span>  <span class='comment'># { 
+</span>  <span class='comment'>#    &quot;ipv4addrs+&quot;:[
+</span>  <span class='comment'>#       { &quot;ipv4addr&quot;:&quot;2.2.2.22&quot; }
+</span>  <span class='comment'>#       { &quot;ipv4addr&quot;:&quot;4.4.4.24&quot; }
+</span>  <span class='comment'>#     ]
+</span>  <span class='comment'># }
+</span>  
+  <span class='kw'>if</span> <span class='id identifier rubyid_hostname'>hostname</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+     <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must pass in a hostname and an IP address</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_validate_ipaddr'>validate_ipaddr</span><span class='lparen'>(</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>false</span>
+     <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IP Address value: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not valid!</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+ 
+  <span class='comment'># First we need to fetch the record ...
+</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>------- Fetch Host -------</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_host_ref'>host_ref</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_hostname'>hostname</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_uooie'>uooie</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_fetchHost'>fetchHost</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Returned Value: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_uooie'>uooie</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+  <span class='id identifier rubyid_ref'>ref</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_host_ref'>host_ref</span> <span class='op'>=</span> <span class='id identifier rubyid_uooie'>uooie</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='comment'># fetchHost will return an array of 1.  Pick up the first element.
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ref = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_host_ref'>host_ref</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span> 
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>------- Fetch Host -------</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_host_ref'>host_ref</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_ref</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='comment'># Now we can create the location to the InfoBlox API
+</span>  <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_hostname'>hostname</span> 
+  <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span><span class='lbracket'>[</span><span class='symbol'>:ipv4addr</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span> 
+  <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span>
+  <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ipv4addrs+</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span>
+  <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_puts'>puts</span> <span class='ivar'>@location</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='ivar'>@location</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deleteHost-instance_method">
+  
+    - (<tt>Array</tt>) <strong>deleteHost</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Example reference record:
+record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:unknown-host/%20</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host_ref</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Host Reference for Host Record fetched from InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of Hashes with the information of the networks.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 228
 229
 230
@@ -758,17 +1081,23 @@ the following options:
 240
 241
 242
-243</pre>
+243
+244
+245
+246
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 228</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_deleteHost'>deleteHost</span><span class='lparen'>(</span><span class='id identifier rubyid_item'>item</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_deleteHost'>deleteHost</span><span class='lparen'>(</span><span class='id identifier rubyid_host_ref'>host_ref</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_host_ref'>host_ref</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 	  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Need a _ref object to delete</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
   <span class='comment'># Set the location ... 
-</span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@wapi_version</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_item'>item</span>
+</span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@wapi_version</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_host_ref'>host_ref</span>
   
   <span class='kw'>begin</span>
     <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='ivar'>@location</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -785,6 +1114,230 @@ the following options:
 </span>    <span class='comment'>#return false
 </span>  <span class='comment'>#end
 </span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deleteIpFromHost-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>deleteIpFromHost</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Call will return true if successful. Otherwise an exception will be
+raised.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Name of the existing host in InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ipaddress</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Valid IP address</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Call will return true if successful. Otherwise an exception will be raised.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 259</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deleteIpFromHost'>deleteIpFromHost</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='comma'>,</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span>
+  <span class='comment'># Set the location ... 
+</span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/record:host?</span><span class='tstring_end'>&quot;</span></span>
+ 
+  <span class='comment'># Use &#39;ipv4addrs+&#39; or &#39;ipv4addrs-&#39;
+</span>  <span class='comment'>#
+</span>  <span class='comment'># PUT /record:host/ZG5zLmhvc3QkLl9kZWZhdWx0Lm9yZy5naC53YXBp
+</span>  <span class='comment'># Content-Type: application/json
+</span>  <span class='comment'>#
+</span>  <span class='comment'># { 
+</span>  <span class='comment'>#    &quot;ipv4addrs-&quot;:[
+</span>  <span class='comment'>#       { &quot;ipv4addr&quot;:&quot;2.2.2.22&quot; }
+</span>  <span class='comment'>#       { &quot;ipv4addr&quot;:&quot;4.4.4.24&quot; }
+</span>  <span class='comment'>#     ]
+</span>  <span class='comment'># }
+</span>  
+  <span class='kw'>if</span> <span class='id identifier rubyid_hostname'>hostname</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+     <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must pass in a hostname and an IP address</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_validate_ipaddr'>validate_ipaddr</span><span class='lparen'>(</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>false</span>
+     <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IP Address value: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not valid!</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+ 
+  <span class='comment'># First we need to fetch the record ...
+</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>------- Fetch Host -------</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_host_ref'>host_ref</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_hostname'>hostname</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_uooie'>uooie</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_fetchHost'>fetchHost</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Returned Value: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_uooie'>uooie</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+  <span class='id identifier rubyid_ref'>ref</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_host_ref'>host_ref</span> <span class='op'>=</span> <span class='id identifier rubyid_uooie'>uooie</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='comment'># fetchHost will return an array of 1.  Pick up the first element.
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ref = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_host_ref'>host_ref</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span> 
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>------- Fetch Host -------</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_host_ref'>host_ref</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_ref</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='comment'># Now we can create the location to the InfoBlox API
+</span>  <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_hostname'>hostname</span> 
+  <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span><span class='lbracket'>[</span><span class='symbol'>:ipv4addr</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span> 
+  <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipv4addr_data'>ipv4addr_data</span>
+  <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ipv4addrs-</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipv4addr_array'>ipv4addr_array</span>
+  <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_puts'>puts</span> <span class='ivar'>@location</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='ivar'>@location</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -959,7 +1512,7 @@ the following options:
       <div class="method_details ">
   <h3 class="signature " id="fetchNetworkRef-instance_method">
   
-    - (<tt>Object</tt>) <strong>fetchNetworkRef</strong>(cdir) 
+    - (<tt>network_ref</tt>) <strong>fetchNetworkRef</strong> 
   
 
   
@@ -968,13 +1521,68 @@ the following options:
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Fetch Network Ref              #</p>
+<p>Returned InfoBlox reference to the network entry</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>cdir</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>IP Network entry. e.g 192.168.0.0/24</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>network_ref</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returned InfoBlox reference to the network entry</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -982,47 +1590,45 @@ the following options:
       <pre class="lines">
 
 
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312</pre>
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 279</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 434</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fetchNetworkRef'>fetchNetworkRef</span><span class='lparen'>(</span><span class='id identifier rubyid_cdir'>cdir</span><span class='rparen'>)</span>
   <span class='comment'># Set the location ... 
-</span>  <span class='comment'>#@location = &quot;/wapi/v1.4/#{cdir}&quot;
 </span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/network?</span><span class='tstring_end'>&quot;</span></span>
   
   <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1168,7 +1774,7 @@ the following options:
       <div class="method_details ">
   <h3 class="signature " id="getIP-instance_method">
   
-    - (<tt>Object</tt>) <strong>getIP</strong>(hostname, ipaddress) 
+    - (<tt>Boolean</tt>) <strong>getIP</strong> 
   
 
   
@@ -1177,13 +1783,85 @@ the following options:
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get IP Address                 #</p>
+<p>Returns true if successful otherwise an exception will be thrown</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Name of the host</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ipaddress</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>IP Address associated with the host. Must be valid IP address</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns true if successful otherwise an exception will be thrown</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1191,41 +1869,51 @@ the following options:
       <pre class="lines">
 
 
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274</pre>
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 393</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_getIP'>getIP</span><span class='lparen'>(</span><span class='id identifier rubyid_hostname'>hostname</span><span class='comma'>,</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span>
   <span class='comment'># Set the location ... 
 </span>  <span class='ivar'>@location</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/wapi/</span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='ivar'>@wapi_version</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/record:host?</span><span class='tstring_end'>&quot;</span></span>
-  
+
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_validate_ipaddr'>validate_ipaddr</span><span class='lparen'>(</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>false</span>
+     <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IP Address value: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not valid!</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
   <span class='id identifier rubyid_json_data'>json_data</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_hostname'>hostname</span> <span class='kw'>unless</span> <span class='id identifier rubyid_hostname'>hostname</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='id identifier rubyid_json_data'>json_data</span><span class='lbracket'>[</span><span class='symbol'>:ipv4addr</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span> <span class='kw'>unless</span> <span class='id identifier rubyid_ipaddress'>ipaddress</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1280,15 +1968,15 @@ the following options:
       <pre class="lines">
 
 
-368
-369
-370
-371
-372
-373</pre>
+526
+527
+528
+529
+530
+531</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 526</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_netmask'>netmask</span><span class='lparen'>(</span><span class='id identifier rubyid_cdir'>cdir</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_netblock'>netblock</span> <span class='op'>=</span> <span class='const'>IPAddr</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_cdir'>cdir</span><span class='rparen'>)</span>
@@ -1304,7 +1992,7 @@ the following options:
       <div class="method_details ">
   <h3 class="signature " id="nextIP-instance_method">
   
-    - (<tt>Object</tt>) <strong>nextIP</strong>(network) 
+    - (<tt>String</tt>) <strong>nextIP</strong> 
   
 
   
@@ -1313,13 +2001,68 @@ the following options:
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Next Available IP Address      #</p>
+<p>Returns the next available IP address for he network passed</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>network</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>InfoBlox network reference</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns the next available IP address for he network passed</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1327,40 +2070,40 @@ the following options:
       <pre class="lines">
 
 
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347</pre>
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 317</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 475</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nextIP'>nextIP</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='rparen'>)</span>
   <span class='comment'># Set the location ... 
@@ -1528,17 +2271,17 @@ validate the ipaddr and gateway Returns: Returns string: true/false</p>
       <pre class="lines">
 
 
-356
-357
-358
-359
-360
-361
-362
-363</pre>
+514
+515
+516
+517
+518
+519
+520
+521</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 356</span>
+      <pre class="code"><span class="info file"># File 'lib/InfoBlox.rb', line 514</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_ipaddr'>validate_ipaddr</span><span class='lparen'>(</span><span class='id identifier rubyid_ip'>ip</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ip_regex'>ip_regex</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b</span><span class='regexp_end'>/</span></span>
@@ -1558,7 +2301,7 @@ validate the ipaddr and gateway Returns: Returns string: true/false</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jul 26 10:55:08 2015 by
+  Generated on Sun Jul 26 13:57:20 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>
