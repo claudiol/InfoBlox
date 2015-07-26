@@ -26,10 +26,22 @@ module InfoBlox
     # Constructor. Sets up the internal variables for this class
     #
     # @param options - Hash
-    #  Hash should contain the following:
+    #  Option values are:
+    #   :config_file - YAML config file
+    #   Example format:
+    #   # Credentials config items
+    #   credentials:
+    #     username: "admin"
+    #     password: "infoblox"
+    #     servername: "192.168.0.112"
+    #     wapi_version: "v1.4"
+    #
+    #   OR
+    #   the following options: 
     #    :username - InfoBlox User Name
     #    :password - Password
     #    :servername - InfoBlox Server name
+    #    :wapi_version - Optional Version of WAPI API. Default: v1.4
     # @return none
     def initialize (options = {})
   
