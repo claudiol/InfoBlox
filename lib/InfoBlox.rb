@@ -82,6 +82,51 @@ module InfoBlox
     # @!method fetchHost 
     # @version 0.2
     # @param options - Hash
+    #  Hash should contain all of the following elements:
+    #    :host - host name
+    #    :ipv4addr - ip addres for the host
+    #
+    # @return [Boolean] True or False
+    def addHost(options)
+       # Set the location ... 
+       @location = "/wapi/v1.2/record:host"
+
+       json_data = {}
+       ipvaddrs_data = {}
+       ipvaddrs_array = []
+  
+       if options.key?(:name) == false &&   options.key?(:ipv4addr) == false  &&   options.key?(:view) == false  
+              raise "You must pass the following options in the hash: name, ipv4addr, view"
+       end
+       if options.key?(:ipv4addr) 
+         ipvaddrs_data[:ipv4addr] = options[:ipv4addr] 
+         ipvaddrs_array[0] = ipvaddrs_data
+         json_data[:ipv4addrs] = ipvaddrs_array
+       end
+       if options.key?(:name) 
+         json_data[:name] = options[:name] 
+       end 
+       if options.key?(:name) 
+         json_data[:view] = options[:view]
+       end
+
+       request = JSON.generate(json_data)
+        
+       puts request.inspect
+       response = nil
+       
+       begin
+         response = @client.post(@location, request)
+         return response
+       rescue => ex
+         raise ex
+       end
+    end
+
+    ##################################
+    # @!method fetchHost 
+    # @version 0.2
+    # @param options - Hash
     #  Hash should contain one or more of the following:
     #    :host - host name
     #    :mac - mac address for the host
@@ -159,7 +204,7 @@ module InfoBlox
 	  raise "Need a _ref object to delete"
       end
       # Set the location ... 
-      @location = "/wapi/v1.4/record:host/" + item
+      @location = "/wapi/v1.4/" + item
   
       begin
         response = @client.delete(@location, nil)

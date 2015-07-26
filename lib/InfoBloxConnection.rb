@@ -134,6 +134,12 @@ module InfoBlox
     # @return results - Response from WAPI REST API
     #
     def post(location, json_data)
+      if !location.nil? 
+        puts "Location: " + @url + location
+      end
+      if !json_data.nil?  
+         puts "Json Data: " + json_data
+      end
 
       response = nil
       if json_data.nil?
@@ -234,10 +240,10 @@ module InfoBlox
     def delete(location, json_data)
   
       if !location.nil? 
-        puts "Location: " + location
+        puts "delete Location: " + @url + location
       end
       if !json_data.nil?  
-         puts "Json Data: " + json_data
+         puts "delete Json Data: " + json_data
       end
 
       response = nil
@@ -278,7 +284,7 @@ module InfoBlox
       end
   
       if !response.nil?
-        results = JSON.parse(response.to_str)
+        results = JSON.parse(response.to_str, :quirks_mode => true)
         return results
       end
     end

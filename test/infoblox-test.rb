@@ -4,10 +4,20 @@ begin
   options = {}
 
   options[:config_file] = "infoblox.yaml"
+  infoblox = InfoBlox::WAPI.new(options)
+
+  puts "------- Add Host Test -------"
+  options[:name] = "unknown-host"
+  options[:ipv4addr] = "192.168.0.2"
+  options[:view] = ' '
+  uooie = infoblox.addHost(options)
+  puts "Returned Value: " + uooie.inspect
+  puts "------- Add Host Test -------"
+  puts ""
+
 
   puts "------- Search Test -------"
   puts "uooie = infoblox.getIP(\"fedora-laptop\",\"192.168.0.92\")"
-  infoblox = InfoBlox::WAPI.new(options)
   uooie = infoblox.getIP("fedora-laptop","192.168.0.92")
   puts "Returned Value: #{uooie}"
   puts "------- End Search Test -------"
@@ -38,9 +48,20 @@ begin
   options[:name] = "unknown-host"
   uooie = infoblox.fetchHost(options)
   puts "Returned Value: " + uooie.inspect
+  ref = {}
+  ref = uooie[0] # fetchHost will return an array of 1.  Pick up the first element.
+  puts "Ref = " + ref.inspect + "\n uoie[0] = " + uooie[0].inspect 
   puts "------- Fetch Host Test -------"
 
+  puts "------- Delete Host Test -------"
+  # Pass in the "_ref" element to deleteHost.
+  # It should look like: record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:unknown-host/%20
+  # 
+  uooie = infoblox.deleteHost(ref["_ref"])
+  puts "Returned Value: " + uooie.inspect
+  puts "------- Delete Host Test -------"
 rescue => ex
   puts ex.message
+  puts ex.backtrace
 end
 
