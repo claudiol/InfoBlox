@@ -6,3 +6,4 @@ credentials:
   username: "admin"
   password: "infoblox"
   servername: "192.168.0.112"
+  wapi_version: "v1.4"
