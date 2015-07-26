@@ -9,8 +9,11 @@ code.
 The directory structure are:
 
 doc/ - Contains YardDoc documentation for the Connection and WAPI classes.
+
 test/ - Contains a test suite for the API.
+
 lib/ - Contains the source code for the Connection and WAPI APIs.
+
 spec/ - Contains the spec to build the GEM.
 
 Makefile - Make file to build the GEM.
