@@ -224,7 +224,7 @@ module InfoBlox
       end
   
       if !response.nil?
-        results = JSON.parse(response.to_str)
+        results = JSON.parse(response.to_str, :quirks_mode=> true)
         return results
       end
     end
