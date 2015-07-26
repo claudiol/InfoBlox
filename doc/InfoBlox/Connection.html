@@ -1,0 +1,1627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: InfoBlox::Connection
+  
+    &mdash; Documentation by YARD 0.8.7
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../InfoBlox.html" title="InfoBlox (module)">InfoBlox</a></span></span>
+     &raquo; 
+    <span class="title">Connection</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: InfoBlox::Connection
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">InfoBlox::Connection</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">Singleton</dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/InfoBloxConnection.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#url-instance_method" title="#url (instance method)">- (Object) <strong>url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute url.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#api_version-instance_method" title="#api_version (instance method)">- (Object) <strong>api_version</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the InfoBlox GEM Version.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Handles the DELETE requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">- (Hash) <strong>get</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Handles the GET requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Constructor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#post-instance_method" title="#post (instance method)">- (Object) <strong>post</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Handles the POST requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#put-instance_method" title="#put (instance method)">- (Object) <strong>put</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Handles the PUT requests.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_up-instance_method" title="#set_up (instance method)">- (Object) <strong>set_up</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets up the internal class instance variables.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup-instance_method" title="#setup (instance method)">- (Object) <strong>setup</strong>(username, password, host, verifyssl = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets up the internal class instance variables.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Constructor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>none.</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='ivar'>@method</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@host</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@password</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@verifyssl</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='ivar'>@url</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>url</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute url</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_url'>url</span>
+  <span class='ivar'>@url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="api_version-instance_method">
+  
+    - (<tt>Object</tt>) <strong>api_version</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the InfoBlox GEM Version</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+288
+289
+290
+291</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 288</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_api_version'>api_version</span>
+  <span class='ivar'>@api_ver</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>v0.2</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>return</span> <span class='ivar'>@api_ver</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Handles the DELETE requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>location</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Location for REST API</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>json_data</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Data payload for API.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>results - Response from WAPI REST API</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_location'>location</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> 
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Location: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_location'>location</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>  
+     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Json Data: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_json_data'>json_data</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:delete</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span>
+    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='op'>|</span>
+   	  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>301</span><span class='comma'>,</span> <span class='int'>302</span><span class='comma'>,</span> <span class='int'>307</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_follow_redirection'>follow_redirection</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+   	  <span class='kw'>else</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_return!'>return!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:delete</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='symbol'>:payload</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_json_data'>json_data</span> 
+    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='op'>|</span>
+   	  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>301</span><span class='comma'>,</span> <span class='int'>302</span><span class='comma'>,</span> <span class='int'>307</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_follow_redirection'>follow_redirection</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+   	  <span class='kw'>else</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_return!'>return!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_results'>results</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>get</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Handles the GET requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>location</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Location for REST API e.g. /wapi/v1.4/record:host?</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>json_data</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Data payload for API.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>results - Response from WAPI REST API</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 82</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_location'>location</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> 
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Location: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_location'>location</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>  
+     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Json Data: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_json_data'>json_data</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>nil</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:get</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span> <span class='rbrace'>}</span>
+      <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span>
+  <span class='kw'>else</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_location'>location</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:get</span><span class='comma'>,</span>
+          <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+          <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+          <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='symbol'>:payload</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_json_data'>json_data</span> <span class='comment'># JSON.generate(json_data)
+</span>      <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='op'>|</span>
+   	  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>301</span><span class='comma'>,</span> <span class='int'>302</span><span class='comma'>,</span> <span class='int'>307</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+     	<span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_follow_redirection'>follow_redirection</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+   	  <span class='kw'>else</span>
+     	<span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_return!'>return!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_results'>results</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="post-instance_method">
+  
+    - (<tt>Object</tt>) <strong>post</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Handles the POST requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>location</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Location for REST API</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>json_data</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Data payload for API.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>results - Response from WAPI REST API</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 136</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:post</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span>
+    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:post</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span><span class='comma'>,</span> 
+        <span class='symbol'>:payload</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_json_data'>json_data</span>
+    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='op'>|</span>
+   	  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>301</span><span class='comma'>,</span> <span class='int'>302</span><span class='comma'>,</span> <span class='int'>307</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+     	<span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_follow_redirection'>follow_redirection</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+   	  <span class='kw'>else</span>
+     	<span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_return!'>return!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># How to fix: &quot;unexpected token&quot; error for JSON.parse
+</span>  <span class='comment'># :quirks_mode =&gt; true added because InfoBlox added a space at the end of the reponse
+</span>  <span class='comment'># POST returns: &quot;\&quot;record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:new-host/%20\&quot;&quot;
+</span>  <span class='comment'>#
+</span>  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POST returns: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+    <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='comma'>,</span> <span class='symbol'>:quirks_mode</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_results'>results</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="put-instance_method">
+  
+    - (<tt>Object</tt>) <strong>put</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Handles the PUT requests</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>location</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Location for REST API</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>json_data</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Data payload for API.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>results - Response from WAPI REST API</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 187</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>nil</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:put</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span>
+    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:put</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='ivar'>@url</span><span class='op'>+</span><span class='id identifier rubyid_location'>location</span><span class='comma'>,</span>
+        <span class='symbol'>:user</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='comma'>,</span>
+        <span class='symbol'>:verify_ssl</span> <span class='op'>=&gt;</span> <span class='ivar'>@verifyssl</span><span class='comma'>,</span>
+        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='ivar'>@password</span><span class='comma'>,</span>
+        <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:accept</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='comma'>,</span>
+                      <span class='symbol'>:content_type</span> <span class='op'>=&gt;</span> <span class='symbol'>:json</span><span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='symbol'>:payload</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_json_data'>json_data</span> <span class='comment'>#JSON.generate(json_data)
+</span>    <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='op'>|</span>
+   	  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>301</span><span class='comma'>,</span> <span class='int'>302</span><span class='comma'>,</span> <span class='int'>307</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_follow_redirection'>follow_redirection</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+   	  <span class='kw'>else</span>
+     	  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_return!'>return!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_results'>results</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_up-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_up</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets up the internal class instance variables.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Username for InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Password for InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>InfoBlox host</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>verifyssl</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Whether or not to use SSL (true/false)</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>none</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_verifyssl'>verifyssl</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='ivar'>@username</span> <span class='op'>=</span> <span class='id identifier rubyid_username'>username</span> 
+  <span class='ivar'>@password</span> <span class='op'>=</span> <span class='id identifier rubyid_password'>password</span> 
+  <span class='ivar'>@verifyssl</span> <span class='op'>=</span> <span class='id identifier rubyid_verifyssl'>verifyssl</span>
+  <span class='ivar'>@host</span> <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span>
+  <span class='ivar'>@url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://</span><span class='embexpr_beg'>#{</span><span class='ivar'>@username</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='ivar'>@password</span><span class='embexpr_end'>}</span><span class='tstring_content'>@</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setup-instance_method">
+  
+    - (<tt>Object</tt>) <strong>setup</strong>(username, password, host, verifyssl = false) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets up the internal class instance variables.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Username for InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Password for InfoBlox</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>InfoBlox host</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>verifyssl</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>Whether or not to use SSL (true/false)</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>none</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/InfoBloxConnection.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_verifyssl'>verifyssl</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='ivar'>@username</span> <span class='op'>=</span> <span class='id identifier rubyid_username'>username</span> 
+  <span class='ivar'>@password</span> <span class='op'>=</span> <span class='id identifier rubyid_password'>password</span> 
+  <span class='ivar'>@verifyssl</span> <span class='op'>=</span> <span class='id identifier rubyid_verifyssl'>verifyssl</span>
+  <span class='ivar'>@host</span> <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span>
+  <span class='ivar'>@url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://</span><span class='embexpr_beg'>#{</span><span class='ivar'>@username</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='ivar'>@password</span><span class='embexpr_end'>}</span><span class='tstring_content'>@</span><span class='embexpr_beg'>#{</span><span class='ivar'>@host</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sat Jul 25 23:54:00 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
