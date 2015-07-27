@@ -68,7 +68,7 @@ module InfoBlox
       @verifyssl = verifyssl
       @host = host
       @url = "https://#{@username}:#{@password}@#{@host}"
-
+      @debug = false
     end
 
     # @!method get
@@ -82,10 +82,10 @@ module InfoBlox
     def get(location, json_data)
   
       if !location.nil? 
-        puts "Location: " + location
+        puts "Location: " + location if @debug
       end
       if !json_data.nil?  
-         puts "Json Data: " + json_data
+         puts "Json Data: " + json_data if @debug
       end
       response = nil
 
@@ -100,7 +100,7 @@ module InfoBlox
                           :content_type => :json }
           ).execute
       else
-          puts "#{url}#{location}"
+          puts "#{url}#{location}" if @debug
           response = RestClient::Request.new(
               :method => :get,
               :url => @url+location,
@@ -135,10 +135,10 @@ module InfoBlox
     #
     def post(location, json_data)
       if !location.nil? 
-        puts "Location: " + @url + location
+        puts "Location: " + @url + location if @debug
       end
       if !json_data.nil?  
-         puts "Json Data: " + json_data
+         puts "Json Data: " + json_data if @debug
       end
 
       response = nil
@@ -176,7 +176,7 @@ module InfoBlox
       # POST returns: "\"record:host/ZG5zLmhvc3QkLm5vbl9ETlNfaG9zdF9yb290LnVua25vd24taG9zdA:new-host/%20\""
       #
       if !response.nil?
-        puts "POST returns: " + response.inspect
+        puts "POST returns: " + response.inspect if @debug
         results = JSON.parse(response.to_str, :quirks_mode => true)
         return results
       end
@@ -191,7 +191,6 @@ module InfoBlox
     # @return results - Response from WAPI REST API
     #
     def put(location, json_data)
-
       response = nil
 
       if json_data.nil?
@@ -240,10 +239,10 @@ module InfoBlox
     def delete(location, json_data)
   
       if !location.nil? 
-        puts "delete Location: " + @url + location
+        puts "delete Location: " + @url + location if @debug
       end
       if !json_data.nil?  
-         puts "delete Json Data: " + json_data
+         puts "delete Json Data: " + json_data if @debug
       end
 
       response = nil

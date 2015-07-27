@@ -53,7 +53,7 @@ module InfoBlox
         # Read values from Config File ...
         @config_name = options[:config_file] 
         # Read the YAML config file...
-        puts "#{@config_name}"
+        puts "#{@config_name}" if @debug if @debug
         @config = read_config(@config_name)
         @user = @config['credentials']['username']
         @password= @config['credentials']['password']
@@ -63,6 +63,8 @@ module InfoBlox
 	   @wapi_version = "v1.4"
         end
         @connection ="#{@user}:#{@password}@#{@servername}" 
+        #@debug = @config['test']['debug']
+        @debug = false
       else
         # We will get each option from the options hash
         if options.key?(:username) == false || 
@@ -77,6 +79,7 @@ module InfoBlox
         if @wapi_version.nil?
 	   @wapi_version = "v1.4"
         end
+        @debug = false
       end
       # get the InfoBlox Connection Instance - Singleton
       @client = InfoBlox::Connection.instance
@@ -93,7 +96,8 @@ module InfoBlox
         begin
           return YAML.load_file(config_name)
         rescue => exception
-          puts exception.message
+          puts exception.message if @debug
+          raise exception
         end
     end
   
@@ -132,7 +136,7 @@ module InfoBlox
 
        request = JSON.generate(json_data)
         
-       puts request.inspect
+       puts request.inspect if @debug
        response = nil
        
        begin
@@ -187,7 +191,7 @@ module InfoBlox
        end
        request = JSON.generate(json_data)
         
-       puts request.inspect
+       puts request.inspect if @debug
        response = nil
        
        begin
@@ -258,7 +262,7 @@ module InfoBlox
     ##################################
     def deleteIpFromHost(hostname, ipaddress)
       # Set the location ... 
-      @location = "/wapi/"+@wapi_version+"/record:host?"
+      @location = "/wapi/"+@wapi_version+"/record:host"
      
       # Use 'ipv4addrs+' or 'ipv4addrs-'
       #
@@ -282,16 +286,16 @@ module InfoBlox
  
       # First we need to fetch the record ...
 
-      puts "------- Fetch Host -------"
+      puts "------- Fetch Host -------" if @debug
       options = {}
       host_ref = {}
       options[:name] = "#{hostname}"
       uooie = self.fetchHost(options)
-      puts "Returned Value: " + uooie.inspect
+      puts "Returned Value: " + uooie.inspect if @debug
       ref = {}
       host_ref = uooie[0] # fetchHost will return an array of 1.  Pick up the first element.
-      puts "Ref = " + host_ref.inspect 
-      puts "------- Fetch Host -------"
+      puts "Ref = " + host_ref.inspect  if @debug
+      puts "------- Fetch Host -------" if @debug
 
       @location = "/wapi/"+@wapi_version+"/" + host_ref["_ref"]
       # Now we can create the location to the InfoBlox API
@@ -305,7 +309,7 @@ module InfoBlox
       json_data['ipv4addrs-'] = ipv4addr_array
       request = JSON.generate(json_data)
   
-      puts @location
+      puts @location if @debug
       begin
         response = @client.put(@location, request)
         return true
@@ -349,16 +353,16 @@ module InfoBlox
  
       # First we need to fetch the record ...
 
-      puts "------- Fetch Host -------"
+      puts "------- Fetch Host -------" if @debug
       options = {}
       host_ref = {}
       options[:name] = "#{hostname}"
       uooie = self.fetchHost(options)
-      puts "Returned Value: " + uooie.inspect
+      puts "Returned Value: " + uooie.inspect if @debug
       ref = {}
       host_ref = uooie[0] # fetchHost will return an array of 1.  Pick up the first element.
-      puts "Ref = " + host_ref.inspect 
-      puts "------- Fetch Host -------"
+      puts "Ref = " + host_ref.inspect  if @debug
+      puts "------- Fetch Host -------" if @debug
 
       @location = "/wapi/"+@wapi_version+"/" + host_ref["_ref"]
       # Now we can create the location to the InfoBlox API
@@ -372,7 +376,7 @@ module InfoBlox
       json_data['ipv4addrs+'] = ipv4addr_array
       request = JSON.generate(json_data)
   
-      puts @location
+      puts @location if @debug
       begin
         response = @client.put(@location, request)
         return true
@@ -476,7 +480,7 @@ module InfoBlox
       # Set the location ... 
       #@location = "/wapi/v1.4/network"
       @location = "/wapi/"+@wapi_version+"/" + "#{network}" + "?_function=next_available_ip&num=1"
-      puts "nextIP: #{@location}"
+      puts "nextIP: #{@location}" if @debug
   
       #json_data = {}
       #json_data[:network] = "#{network}"
