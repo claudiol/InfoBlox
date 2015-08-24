@@ -4,10 +4,10 @@ Gem::Specification.new do |s|
   s.date        = '2015-07-25'
   s.summary     = "Custom InfoBlox Gem"
   s.description = "Custom InfoBlox GEM to support add/delete/list records"
-  s.authors     = ["Jason Ritenour"]
-  s.email       = '@redhat.com'
+  s.authors     = ["Lester Claudio, Jason Ritenour"]
+  s.email       = 'lester@redhat.com'
   s.files       = ["lib/InfoBloxConnection.rb", "lib/InfoBlox.rb"]
   s.homepage    =
-    'http://github.com/'
+    'http://github.com/rhtconsulting/InfoBlox'
   s.license       = 'GPL'
 end
